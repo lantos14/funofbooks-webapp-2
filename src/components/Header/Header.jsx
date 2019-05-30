@@ -1,11 +1,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import React from 'react';
-import headerStyle from './Header.style';
-// import appStyle from './Header.style';
+import backgroundStyle from './Header.style';
+import Title from './components/Title/Title';
 
 const Header = () => (
-  <div className="background" css={headerStyle} />
+  <div>
+    <div className="background" css={backgroundStyle} />
+    <Title />
+  </div>
 );
 
 export default Header;
