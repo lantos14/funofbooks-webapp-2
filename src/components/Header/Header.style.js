@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import headerBackground from '../../images/header-background.jpg';
 
-const backgroundStyle = css`
+export const backgroundStyle = css`
   position: absolute;
   top: 0; left: 0;
   width: 130%;
@@ -12,4 +12,6 @@ const backgroundStyle = css`
   background-size: cover;
 `;
 
-export default backgroundStyle;
+export const headerStyle = css`
+  height: 500px;
+`;
