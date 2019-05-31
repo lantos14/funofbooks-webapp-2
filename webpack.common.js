@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const CleanWebPackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.jsx'),
@@ -55,5 +56,6 @@ module.exports = {
     }),
     new CleanWebPackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new Dotenv(),
   ],
 };

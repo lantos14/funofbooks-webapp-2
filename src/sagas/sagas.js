@@ -1,25 +1,25 @@
 import 'regenerator-runtime/runtime';
 import {
-  takeEvery, put, delay,
+  takeEvery, put, call, delay,
 } from 'redux-saga/effects';
+import * as API from '../services/api';
 
-function* getAPIResponse(action) {
-  // call here
+
+function* getBookList() {
   try {
     yield delay(100);
+    const url = `${process.env.FOB_SERVER}/nospoiler`;
+    const data = yield call(API.getData, url);
+    data.reverse();
     yield put({
-      type: 'TODO_ADD_SUCCEEDED',
-      payload: action.payload,
+      type: 'BOOKLIST_SUCCEEDED',
+      payload: data,
     });
   } catch (error) {
-    yield put({
-      type: 'TODO_ADD_FAILED',
-      payload: error,
-    });
     console.log(error); //eslint-disable-line
   }
 }
 
 export default function* rootSaga() {
-  yield takeEvery('TODO_ADD_REQUESTED', getAPIResponse);
+  yield takeEvery('BOOKLIST_REQUESTED', getBookList);
 }

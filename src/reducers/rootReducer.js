@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import todo from './todo';
+import bookStore from './bookStore';
 
 const rootReducer = combineReducers({
-  todo,
+  bookStore,
 });
 
 export default rootReducer;

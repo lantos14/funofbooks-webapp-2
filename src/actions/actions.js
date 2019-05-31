@@ -1,20 +1,6 @@
-export function addTodo(name) {
+/* eslint-disable import/prefer-default-export */
+export function getBooks() {
   return {
-    type: 'TODO_ADD_REQUESTED',
-    payload: name,
-  };
-}
-
-export function finishTodo(name) {
-  return {
-    type: 'TODO_FINISHED_REQUESTED',
-    payload: name,
-  };
-}
-
-export function delTodo(name) {
-  return {
-    type: 'TODO_DELETE_REQUESTED',
-    payload: name,
+    type: 'BOOKLIST_REQUESTED',
   };
 }
