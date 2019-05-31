@@ -10,6 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import BookCardStyle from './BookCard.style';
+import BookCardTypes from './BookCard.types';
 
 const useStyles = makeStyles({
   card: {
@@ -20,7 +21,9 @@ const useStyles = makeStyles({
   },
 });
 
-const BookCard = () => {
+const BookCard = ({
+  title, description, image,
+}) => {
   const classes = useStyles();
 
   return (
@@ -28,16 +31,15 @@ const BookCard = () => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+          image={image}
+          title={title}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -52,5 +54,7 @@ const BookCard = () => {
     </Card>
   );
 };
+
+BookCard.propTypes = BookCardTypes;
 
 export default BookCard;

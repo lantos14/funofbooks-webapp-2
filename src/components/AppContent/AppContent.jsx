@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import React from 'react';
@@ -7,20 +8,30 @@ import BookCard from './components/BookCard/BookCard';
 // styles
 import AppContentStyle from './AppContent.style';
 import commonRules from '../../styles/commonRules';
+import AppContentTypes from './AppContent.types';
 
 const { centerConent } = commonRules;
 
-const AppContent = () => (
+const AppContent = ({ bookList }) => (
   <div className="app-content" css={AppContentStyle.AppContent}>
     <CssBaseline />
 
     <Container css={centerConent}>
-      <BookCard />
-      <BookCard />
-      <BookCard />
+      {
+        bookList.map(book => (
+          <BookCard
+            key={book._id}
+            title={book.title}
+            description={book.description}
+            image={book.imgSrc}
+          />
+        ))
+      }
     </Container>
 
   </div>
 );
+
+AppContent.propTypes = AppContentTypes;
 
 export default AppContent;

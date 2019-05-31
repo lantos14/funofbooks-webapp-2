@@ -1,5 +1,5 @@
 export default function bookStore(state = {
-  Books: [],
+  books: [],
   selectedBook: '',
   loading: false,
 }, action) {
@@ -7,7 +7,7 @@ export default function bookStore(state = {
   case 'BOOKLIST_SUCCEEDED': {
     return {
       ...state,
-      Books: action.payload,
+      books: action.payload,
       loading: false,
     };
   }
