@@ -11,10 +11,12 @@ import commonRules from '../../styles/commonRules';
 const { centerConent } = commonRules;
 
 const AppContent = () => (
-  <div className="app-content" css={AppContentStyle}>
+  <div className="app-content" css={AppContentStyle.AppContent}>
     <CssBaseline />
 
-    <Container css={css`display: flex; justify-content: center;`}>
+    <Container css={centerConent}>
+      <BookCard />
+      <BookCard />
       <BookCard />
     </Container>
 

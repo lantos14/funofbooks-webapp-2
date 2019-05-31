@@ -24,7 +24,7 @@ const BookCard = () => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} css={BookCardStyle}>
       <CardActionArea>
         <CardMedia
           className={classes.media}

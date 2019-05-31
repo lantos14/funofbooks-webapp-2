@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 
 const BookCardStyle = css`
-  border: 1px solid red;
+  margin-bottom: 30px;
 `;
 
 export default BookCardStyle;
