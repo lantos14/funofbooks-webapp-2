@@ -6,14 +6,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import BookCard from './components/BookCard/BookCard';
 // styles
-import AppContentStyle from './AppContent.style';
-import commonRules from '../../styles/commonRules';
-import AppContentTypes from './AppContent.types';
+import BookShelfStyle from './BookShelf.style';
+import commonRules from '../../../../styles/commonRules';
+import BookShelfTypes from './BookShelf.types';
 
 const { centerConent } = commonRules;
 
-const AppContent = ({ bookList }) => (
-  <div className="app-content" css={AppContentStyle.AppContent}>
+const BookShelf = ({ bookList }) => (
+  <div className="book-shelf" css={BookShelfStyle.BookShelf}>
     <CssBaseline />
 
     <Container css={centerConent}>
@@ -32,6 +32,6 @@ const AppContent = ({ bookList }) => (
   </div>
 );
 
-AppContent.propTypes = AppContentTypes;
+BookShelf.propTypes = BookShelfTypes;
 
-export default AppContent;
+export default BookShelf;

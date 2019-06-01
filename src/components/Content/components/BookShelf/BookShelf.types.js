@@ -2,7 +2,7 @@ import {
   arrayOf, shape, bool, string,
 } from 'prop-types';
 
-const AppContentTypes = {
+const BookShelfTypes = {
   bookList: arrayOf(shape({
     _id: string.isRequired,
     title: string.isRequired,
@@ -17,4 +17,4 @@ const AppContentTypes = {
   })),
 };
 
-export default AppContentTypes;
+export default BookShelfTypes;

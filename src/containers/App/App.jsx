@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import appStyle from './App.style';
 import Header from '../../components/Header/Header';
 import NavBar from '../../components/NavBar/NavBar';
-import AppContent from '../../components/AppContent/AppContent';
 import { getBooks } from '../../actions/actions';
 import AppTypes from './App.types';
+import Content from '../../components/Content/Content';
 
 const App = ({ getBooks, bookList }) => {
   useEffect(() => {
@@ -19,7 +19,7 @@ const App = ({ getBooks, bookList }) => {
     <div className="app" css={appStyle}>
       <Header />
       <NavBar />
-      <AppContent bookList={bookList} />
+      <Content bookList={bookList} />
     </div>
   );
 };

@@ -27,12 +27,13 @@ const BookCard = ({
   const classes = useStyles();
 
   return (
-    <Card className={classes.card} css={BookCardStyle}>
+    <Card className={classes.card} css={BookCardStyle.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image={image}
           title={title}
+          css={BookCardStyle.media}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
