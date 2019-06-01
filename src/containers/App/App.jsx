@@ -18,7 +18,7 @@ const App = ({ getBooks, bookList }) => {
   return (
     <div className="app" css={appStyle}>
       <Header />
-      <NavBar />
+      <NavBar bookList={bookList} />
       <Content bookList={bookList} />
     </div>
   );
