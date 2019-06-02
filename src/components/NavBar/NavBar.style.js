@@ -1,8 +1,14 @@
 import { css } from '@emotion/core';
 
-const ToolbarStyle = css`
-  display: flex;
-  justify-content: center;
-`;
+const NavBarStyle = {
+  toolbar: css`
+    display: flex;
+    justify-content: center;
+  `,
+  navbar: css`
+    display: flex;
+    position: relative;
+  `,
+};
 
-export default ToolbarStyle;
+export default NavBarStyle;

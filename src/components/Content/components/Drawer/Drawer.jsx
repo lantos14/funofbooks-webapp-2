@@ -1,13 +1,17 @@
 import React from 'react';
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
+import ReorderIcon from '@material-ui/icons/Reorder';
 import BookShelf from '../BookShelf/BookShelf';
 import BookShelfTypes from '../BookShelf/BookShelf.types';
+import DrawerStyle from './Drawer.style';
 
 const useStyles = makeStyles({
   list: {
-    width: 300,
+    width: 350,
   },
   fullList: {
     width: 'auto',
@@ -53,9 +57,16 @@ function SwipeableTemporaryDrawer({ bookList }) {
     </div>
   );
 
+  const toggleStyle = state.left ? DrawerStyle.lowIndex : DrawerStyle.highIndex;
+
   return (
-    <div>
-      <Button onClick={toggleDrawer('left', true)}>Open Left</Button>
+    <div
+      className="shelf-toggle"
+      css={[DrawerStyle.shelfToggle, toggleStyle]}
+    >
+      <Button onClick={toggleDrawer('left', true)}>
+        <ReorderIcon fontSize="64px" />
+      </Button>
       <SwipeableDrawer
         open={state.left}
         onClose={toggleDrawer('left', false)}
