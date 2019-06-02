@@ -10,7 +10,7 @@ import { getBooks } from '../../actions/actions';
 import AppTypes from './App.types';
 import Content from '../../components/Content/Content';
 
-const App = ({ getBooks, bookList }) => {
+const App = ({ getBooks, bookList, selectedBook }) => {
   useEffect(() => {
     getBooks();
   }, []);
@@ -19,7 +19,9 @@ const App = ({ getBooks, bookList }) => {
     <div className="app" css={appStyle}>
       <Header />
       <NavBar bookList={bookList} />
-      <Content bookList={bookList} />
+      {/* <Content
+        selectedBook={selectedBook}
+      /> */}
     </div>
   );
 };
@@ -28,6 +30,7 @@ App.propTypes = AppTypes;
 
 const mapStateToProps = store => ({
   bookList: store.bookStore.books,
+  selectedBook: store.bookStore.selectedBook,
 });
 
 const mapDispatchToProps = {

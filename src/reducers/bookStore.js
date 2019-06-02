@@ -1,6 +1,11 @@
 export default function bookStore(state = {
   books: [],
-  selectedBook: '',
+  selectedBook: {
+    title: 'title',
+    story: 'story',
+    opinion: 'opinion',
+    summary: 'summary',
+  },
   loading: false,
 }, action) {
   switch (action.type) {
@@ -8,6 +13,7 @@ export default function bookStore(state = {
     return {
       ...state,
       books: action.payload,
+      selectedBook: action.payload[0],
       loading: false,
     };
   }

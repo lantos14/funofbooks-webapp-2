@@ -2,16 +2,21 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import React from 'react';
-import BookShelfTypes from './components/BookShelf/BookShelf.types';
+import ContentTypes from './Content.types';
 
-const Content = ({ bookList }) => (
-  <div className="content">
-    content
-  </div>
-);
+const Content = ({ book }) => {
+  return (
+    <div className="content">
+      <h1>{book.title}</h1>
+      <p>{book.story}</p>
+      <p>{book.opinion}</p>
+      <p>{book.summary}</p>
+    </div>
+  );
+};
 
 Content.propTypes = {
-  ...BookShelfTypes,
+  ...ContentTypes,
 };
 
 export default Content;
