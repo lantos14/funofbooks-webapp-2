@@ -19,9 +19,9 @@ const App = ({ getBooks, bookList, selectedBook }) => {
     <div className="app" css={appStyle}>
       <Header />
       <NavBar bookList={bookList} />
-      {/* <Content
+      <Content
         selectedBook={selectedBook}
-      /> */}
+      />
     </div>
   );
 };

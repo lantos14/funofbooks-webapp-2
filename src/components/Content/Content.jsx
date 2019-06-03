@@ -3,14 +3,22 @@
 import { jsx, css } from '@emotion/core';
 import React from 'react';
 import ContentTypes from './Content.types';
+import ContentStyle from './Content.style';
 
-const Content = ({ book }) => {
+const Content = ({ selectedBook }) => {
+  const {
+    title,
+    story,
+    opinion,
+    summary,
+  } = selectedBook;
+
   return (
-    <div className="content">
-      <h1>{book.title}</h1>
-      <p>{book.story}</p>
-      <p>{book.opinion}</p>
-      <p>{book.summary}</p>
+    <div className="content" css={ContentStyle.content}>
+      <h1 css={ContentStyle.header}>{title}</h1>
+      <p>{story}</p>
+      <p>{opinion}</p>
+      <p>{summary}</p>
     </div>
   );
 };

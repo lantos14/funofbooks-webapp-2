@@ -2,7 +2,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import BookCard from './components/BookCard/BookCard';
 // styles
@@ -14,8 +13,6 @@ const { centerConent } = commonRules;
 
 const BookShelf = ({ bookList }) => (
   <div className="book-shelf" css={BookShelfStyle.BookShelf}>
-    <CssBaseline />
-
     <Container css={centerConent}>
       {
         bookList.map(book => (
