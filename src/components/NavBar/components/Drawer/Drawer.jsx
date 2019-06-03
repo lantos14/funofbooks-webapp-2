@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import ReorderIcon from '@material-ui/icons/Reorder';
-import BookShelf from '../BookShelf/BookShelf';
-import BookShelfTypes from '../BookShelf/BookShelf.types';
+import BookShelf from './components/BookShelf/BookShelf';
+import BookShelfTypes from './components/BookShelf/BookShelf.types';
 import DrawerStyle from './Drawer.style';
 
 const useStyles = makeStyles({

@@ -5,8 +5,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import NavButton from './components/NavButton/NavButton';
 import NavBarStyle from './NavBar.style';
-import SwipeableTemporaryDrawer from '../Content/components/Drawer/Drawer';
-import BookShelfTypes from '../Content/components/BookShelf/BookShelf.types';
+import SwipeableTemporaryDrawer from './components/Drawer/Drawer';
+import BookShelfTypes from './components/Drawer/components/BookShelf/BookShelf.types';
 
 const { toolbar, navbar } = NavBarStyle;
 

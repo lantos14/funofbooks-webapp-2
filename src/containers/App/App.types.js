@@ -1,7 +1,8 @@
 import {
   func,
 } from 'prop-types';
-import BookShelfTypes from '../../components/Content/components/BookShelf/BookShelf.types';
+// eslint-disable-next-line max-len
+import BookShelfTypes from '../../components/NavBar/components/Drawer/components/BookShelf/BookShelf.types';
 
 const AppTypes = {
   getBooks: func.isRequired,

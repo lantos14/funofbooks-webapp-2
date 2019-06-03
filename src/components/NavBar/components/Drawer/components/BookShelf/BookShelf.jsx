@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import BookCard from './components/BookCard/BookCard';
 // styles
 import BookShelfStyle from './BookShelf.style';
-import commonRules from '../../../../styles/commonRules';
+import commonRules from '../../../../../../styles/commonRules';
 import BookShelfTypes from './BookShelf.types';
 
 const { centerConent } = commonRules;

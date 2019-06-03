@@ -3,7 +3,6 @@ import { jsx, css } from '@emotion/core';
 import React from 'react';
 import ReviewStyle from './Review.style';
 import ContentTypes from '../../Content.types';
-import BookCover from './components/BookCover';
 
 const Review = ({
   title,
@@ -13,7 +12,6 @@ const Review = ({
   image,
 }) => (
   <div className="review" css={ReviewStyle.content}>
-    <BookCover url={image} />
     <h1 css={ReviewStyle.header}>{title}</h1>
     <p>{story}</p>
     <p>{opinion}</p>
