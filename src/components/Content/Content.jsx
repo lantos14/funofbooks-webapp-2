@@ -1,9 +1,9 @@
-/* eslint-disable no-underscore-dangle */
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import React from 'react';
 import ContentTypes from './Content.types';
 import ContentStyle from './Content.style';
+import Review from './components/Review/Review';
 
 const Content = ({ selectedBook }) => {
   const {
@@ -11,14 +11,18 @@ const Content = ({ selectedBook }) => {
     story,
     opinion,
     summary,
+    imgSrc,
   } = selectedBook;
 
   return (
     <div className="content" css={ContentStyle.content}>
-      <h1 css={ContentStyle.header}>{title}</h1>
-      <p>{story}</p>
-      <p>{opinion}</p>
-      <p>{summary}</p>
+      <Review
+        title={title}
+        story={story}
+        opinion={opinion}
+        summary={summary}
+        image={imgSrc}
+      />
     </div>
   );
 };

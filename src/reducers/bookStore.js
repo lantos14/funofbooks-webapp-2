@@ -1,10 +1,10 @@
 export default function bookStore(state = {
   books: [],
   selectedBook: {
-    title: 'title',
-    story: 'story',
-    opinion: 'opinion',
-    summary: 'summary',
+    title: '',
+    story: '',
+    opinion: '',
+    summary: '',
   },
   loading: false,
 }, action) {
