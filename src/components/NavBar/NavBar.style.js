@@ -9,7 +9,9 @@ const NavBarStyle = {
   navbar: css`
     display: flex;
     height: 64px;
-    position: relative;
+    position: fixed;
+    left: 0; right: 0;
+    z-index: 10;
   `,
 };
 

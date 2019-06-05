@@ -65,7 +65,7 @@ function SwipeableTemporaryDrawer({ bookList }) {
       css={[DrawerStyle.shelfToggle, toggleStyle]}
     >
       <Button onClick={toggleDrawer('left', true)}>
-        <ReorderIcon fontSize="64px" />
+        <ReorderIcon />
       </Button>
       <SwipeableDrawer
         open={state.left}

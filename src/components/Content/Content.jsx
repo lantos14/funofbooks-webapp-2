@@ -4,7 +4,6 @@ import React from 'react';
 import ContentTypes from './Content.types';
 import ContentStyle from './Content.style';
 import Review from './components/Review/Review';
-import BookCover from './components/BookCover/BookCover';
 
 const Content = ({ selectedBook }) => {
   const {
@@ -17,7 +16,6 @@ const Content = ({ selectedBook }) => {
 
   return (
     <div className="content" css={ContentStyle.content}>
-      <BookCover url={imgSrc} />
       <Review
         title={title}
         story={story}
