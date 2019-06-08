@@ -1,3 +1,9 @@
+/* eslint-disable no-underscore-dangle */
+import {
+  BOOKLIST_REQUESTED,
+  BOOK_SELECT_REQUESTED,
+} from '../actions/actionTypes';
+
 export default function bookStore(state = {
   books: [],
   selectedBook: {
@@ -17,10 +23,18 @@ export default function bookStore(state = {
       loading: false,
     };
   }
-  case 'BOOKLIST_REQUESTED': {
+  case BOOKLIST_REQUESTED: {
     return {
       ...state,
       loading: true,
+    };
+  }
+
+  case BOOK_SELECT_REQUESTED: {
+    console.log(1);
+    return {
+      ...state,
+      selectedBook: state.books.find(book => book._id === action.payload),
     };
   }
 

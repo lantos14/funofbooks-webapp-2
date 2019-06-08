@@ -3,7 +3,7 @@ import {
   takeEvery, put, call, delay,
 } from 'redux-saga/effects';
 import * as API from '../services/api';
-
+import mockResponse from '../store/mockResponse';
 
 function* getBookList() {
   try {
@@ -13,7 +13,8 @@ function* getBookList() {
     data.reverse();
     yield put({
       type: 'BOOKLIST_SUCCEEDED',
-      payload: data,
+      // payload: data,
+      payload: mockResponse.data.reverse(),
     });
   } catch (error) {
     console.log(error); //eslint-disable-line

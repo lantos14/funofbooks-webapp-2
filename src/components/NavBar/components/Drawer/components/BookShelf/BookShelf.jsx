@@ -18,6 +18,7 @@ const BookShelf = ({ bookList }) => (
         bookList.map(book => (
           <BookCard
             key={book._id}
+            id={book._id}
             title={book.title}
             description={book.description}
             image={book.imgSrc}

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import React from 'react';
+import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -11,6 +12,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import BookCardStyle from './BookCard.style';
 import BookCardTypes from './BookCard.types';
+import { bookSelected } from '../../../../../../../../actions/actions';
 
 const useStyles = makeStyles({
   card: {
@@ -21,13 +23,15 @@ const useStyles = makeStyles({
   },
 });
 
+// COMPONENT
 const BookCard = ({
-  title, description, image,
+  title, description, image, id, bookSelected,
 }) => {
   const classes = useStyles();
 
+  // render()
   return (
-    <Card className={classes.card} css={BookCardStyle.card}>
+    <Card className={classes.card} css={BookCardStyle.card} onClick={() => bookSelected(id)}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -51,4 +55,15 @@ const BookCard = ({
 
 BookCard.propTypes = BookCardTypes;
 
-export default BookCard;
+const mapStateToProps = store => ({
+});
+
+const mapDispatchToProps = {
+  bookSelected,
+};
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(BookCard);
