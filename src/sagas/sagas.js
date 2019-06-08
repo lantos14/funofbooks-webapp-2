@@ -9,8 +9,8 @@ function* getBookList() {
   try {
     yield delay(100);
     const url = `${process.env.FOB_SERVER}/nospoiler`;
-    const data = yield call(API.getData, url);
-    data.reverse();
+    // const data = yield call(API.getData, url);
+    // data.reverse();
     yield put({
       type: 'BOOKLIST_SUCCEEDED',
       // payload: data,

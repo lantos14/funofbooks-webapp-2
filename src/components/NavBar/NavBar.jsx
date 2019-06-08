@@ -7,6 +7,7 @@ import NavButton from './components/NavButton/NavButton';
 import NavBarStyle from './NavBar.style';
 import SwipeableTemporaryDrawer from './components/Drawer/Drawer';
 import BookShelfTypes from './components/Drawer/components/BookShelf/BookShelf.types';
+import LoginModal from './components/LoginModal/LoginModal';
 
 const { toolbar, navbar } = NavBarStyle;
 
@@ -18,6 +19,7 @@ const NavBar = ({ bookList }) => (
         <NavButton text="Főoldal" />
         <NavButton text="Rólam" />
         <NavButton text="Github" />
+        <LoginModal />
       </Toolbar>
     </AppBar>
   </div>
