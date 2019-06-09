@@ -8,7 +8,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import NavButton from '../NavButton/NavButton';
 
-function LoginModal() {
+function RegistrationModal() {
   const [open, setOpen] = React.useState(false);
 
   function handleClickOpen() {
@@ -21,13 +21,12 @@ function LoginModal() {
 
   return (
     <div>
-      <NavButton text="Bejelentkezés" onClickFn={handleClickOpen} />
+      <NavButton text="Regisztráció" onClickFn={handleClickOpen} />
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Bejelentkezés</DialogTitle>
+        <DialogTitle id="form-dialog-title">Regisztráció</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Ahhoz, hogy hozzászólásokat és egyéb tevékenységeket tudj végezni az oldalon,
-            regisztráció szükséges. Kérlek add meg az ehhez szükséges adatokat.
+            Kérlek, add meg a regisztrációhoz adatokat.
           </DialogContentText>
           <TextField
             autoFocus
@@ -35,6 +34,13 @@ function LoginModal() {
             id="address"
             label="E-mail cím"
             type="email"
+            fullWidth
+          />
+          <TextField
+            margin="dense"
+            id="username"
+            label="Felhasználónév"
+            type="text"
             fullWidth
           />
           <TextField
@@ -54,7 +60,7 @@ function LoginModal() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Bejelentkezés
+            Regisztrálok
           </Button>
           <Button onClick={handleClose} color="primary">
             Mégsem
@@ -65,4 +71,4 @@ function LoginModal() {
   );
 }
 
-export default LoginModal;
+export default RegistrationModal;
