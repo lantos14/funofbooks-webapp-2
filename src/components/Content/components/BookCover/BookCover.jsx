@@ -11,10 +11,12 @@ const BookCover = styled.div`
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 125px;
+  height: 150px;
   ${mq[1]} {
     width: 50%;
-    height: 200px;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
     margin: 10px auto;
   }
 `;
