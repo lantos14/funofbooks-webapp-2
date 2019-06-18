@@ -2,6 +2,7 @@
 import {
   BOOKLIST_REQUESTED,
   BOOK_SELECT_REQUESTED,
+  BOOKLIST_SUCCEEDED,
 } from '../actions/actionTypes';
 
 export default function bookStore(state = {
@@ -15,7 +16,7 @@ export default function bookStore(state = {
   loading: false,
 }, action) {
   switch (action.type) {
-  case 'BOOKLIST_SUCCEEDED': {
+  case BOOKLIST_SUCCEEDED: {
     return {
       ...state,
       books: action.payload,
@@ -31,7 +32,6 @@ export default function bookStore(state = {
   }
 
   case BOOK_SELECT_REQUESTED: {
-    console.log(1);
     return {
       ...state,
       selectedBook: state.books.find(book => book._id === action.payload),

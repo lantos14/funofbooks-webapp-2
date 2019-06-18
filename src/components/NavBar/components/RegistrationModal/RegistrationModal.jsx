@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -7,8 +8,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import NavButton from '../NavButton/NavButton';
+import { registrationRequested } from '../../../../actions/actions';
+import RegistrationModalTypes from './RegistrationModal.types';
 
-function RegistrationModal() {
+function RegistrationModal({ registrationRequested }) {
   const [open, setOpen] = React.useState(false);
 
   function handleClickOpen() {
@@ -16,6 +19,10 @@ function RegistrationModal() {
   }
 
   function handleClose() {
+    const email = document.querySelector('#address').value;
+    const username = document.querySelector('#username').value;
+    const pwd = document.querySelector('#password').value;
+    registrationRequested(email, username, pwd);
     setOpen(false);
   }
 
@@ -71,4 +78,18 @@ function RegistrationModal() {
   );
 }
 
-export default RegistrationModal;
+RegistrationModal.propTypes = RegistrationModalTypes;
+
+const mapStateToProps = store => ({
+  bookList: store.bookStore.books,
+  selectedBook: store.bookStore.selectedBook,
+});
+
+const mapDispatchToProps = {
+  registrationRequested,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(RegistrationModal);

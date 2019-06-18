@@ -4,6 +4,7 @@ import {
 } from 'redux-saga/effects';
 import * as API from '../services/api';
 import mockResponse from '../store/mockResponse';
+import { BOOKLIST_REQUESTED, BOOKLIST_SUCCEEDED } from '../actions/actionTypes';
 
 function* getBookList() {
   try {
@@ -12,7 +13,7 @@ function* getBookList() {
     // const data = yield call(API.getData, url);
     // data.reverse();
     yield put({
-      type: 'BOOKLIST_SUCCEEDED',
+      type: BOOKLIST_SUCCEEDED,
       // payload: data,
       payload: mockResponse.data.reverse(),
     });
@@ -22,5 +23,5 @@ function* getBookList() {
 }
 
 export default function* rootSaga() {
-  yield takeEvery('BOOKLIST_REQUESTED', getBookList);
+  yield takeEvery(BOOKLIST_REQUESTED, getBookList);
 }
