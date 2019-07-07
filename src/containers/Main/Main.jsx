@@ -3,14 +3,14 @@ import { jsx } from '@emotion/core';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import appStyle from './App.style';
+import appStyle from './Main.style';
 import Header from '../../components/Header/Header';
 import NavBar from '../../components/NavBar/NavBar';
 import { getBooks } from '../../actions/actions';
-import AppTypes from './App.types';
+import AppTypes from './Main.types';
 import Content from '../../components/Content/Content';
 
-const App = ({ getBooks, bookList, selectedBook }) => {
+const Main = ({ getBooks, bookList, selectedBook }) => {
   useEffect(() => {
     getBooks();
   }, []);
@@ -26,7 +26,7 @@ const App = ({ getBooks, bookList, selectedBook }) => {
   );
 };
 
-App.propTypes = AppTypes;
+Main.propTypes = AppTypes;
 
 const mapStateToProps = store => ({
   bookList: store.bookStore.books,
@@ -40,4 +40,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(App);
+)(Main);

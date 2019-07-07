@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 import bookStore from './bookStore';
 
-const rootReducer = combineReducers({
+export default history => combineReducers({
+  router: connectRouter(history),
   bookStore,
 });
-
-export default rootReducer;
