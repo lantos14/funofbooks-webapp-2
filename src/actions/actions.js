@@ -2,6 +2,7 @@ import {
   BOOKLIST_REQUESTED,
   BOOK_SELECT_REQUESTED,
   REGISTRATION_REQUESTED,
+  LOGIN_REQUESTED,
 } from './actionTypes';
 
 export function getBooks() {
@@ -17,6 +18,12 @@ export function bookSelected(id) {
   };
 }
 
+export function loginRequested(email, pwd) {
+  return {
+    type: LOGIN_REQUESTED,
+    payload: { email, pwd },
+  };
+}
 export function registrationRequested(email, username, pwd) {
   return {
     type: REGISTRATION_REQUESTED,

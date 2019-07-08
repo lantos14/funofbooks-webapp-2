@@ -8,11 +8,18 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import NavButton from '../NavButton/NavButton';
 
-function LoginModal() {
+function LoginModal({ loginRequested }) {
   const [open, setOpen] = React.useState(false);
 
   function handleClickOpen() {
     setOpen(true);
+  }
+
+  function handleLogin() {
+    const email = document.querySelector('#address').value;
+    const pwd = document.querySelector('#password').value;
+    loginRequested(email, pwd);
+    setOpen(false);
   }
 
   function handleClose() {
@@ -53,7 +60,7 @@ function LoginModal() {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleLogin} color="primary">
             Bejelentkezés
           </Button>
           <Button onClick={handleClose} color="primary">

@@ -11,14 +11,20 @@ import RegistrationModal from './components/RegistrationModal/RegistrationModal'
 
 const { toolbar, navbar } = NavBarStyle;
 
-const NavBar = ({ bookList }) => (
+const NavBar = ({ bookList, loginRequested, userRole }) => (
   <div className="navbar" css={navbar}>
     <SwipeableTemporaryDrawer bookList={bookList} />
     <AppBar position="static" color="default">
-      <Toolbar className="toolbar" css={toolbar}>
-        <LoginModal />
-        <RegistrationModal />
-      </Toolbar>
+      {
+        userRole === 'admin'
+          ? (
+            <Toolbar className="toolbar" css={toolbar}>
+              <LoginModal loginRequested={loginRequested} />
+              {/* <RegistrationModal /> */}
+            </Toolbar>
+          )
+          : null
+      }
     </AppBar>
   </div>
 );

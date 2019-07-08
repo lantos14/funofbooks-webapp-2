@@ -12,3 +12,22 @@ export function getData(url) {
       throw error;
     });
 }
+
+export function sendLogin(url, data) {
+  console.log('api login data: ', data); //eslint-disable-line
+  return fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      strategy: 'local',
+      email: data.email,
+      password: data.pwd,
+    }),
+  })
+    .then(response => response.json())
+    .catch((error) => {
+      throw error;
+    });
+}
