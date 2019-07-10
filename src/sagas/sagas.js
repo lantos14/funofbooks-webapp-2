@@ -3,7 +3,14 @@ import {
   takeEvery, put, call, delay,
 } from 'redux-saga/effects';
 import * as API from '../services/api';
-import { BOOKLIST_REQUESTED, BOOKLIST_SUCCEEDED, LOGIN_REQUESTED } from '../actions/actionTypes';
+import {
+  BOOKLIST_REQUESTED,
+  BOOKLIST_SUCCEEDED,
+  LOGIN_REQUESTED,
+  LOGIN_SUCCEEDED,
+} from '../actions/actionTypes';
+
+const jwtDecode = require('jwt-decode');
 
 function* getBookList() {
   try {
@@ -25,7 +32,13 @@ function* sendLoginCreds(action) {
     yield delay(100);
     const url = `${process.env.FOB_SERVER}/authentication`;
     const data = yield call(API.sendLogin, url, action.payload);
-    console.log('data: ', data);
+    const decodedToken = jwtDecode(data.accessToken);
+    localStorage.setItem('jwtToken', data.accessToken);
+    localStorage.setItem('username', decodedToken.username);
+    yield put({
+      type: LOGIN_SUCCEEDED,
+      payload: decodedToken,
+    });
   } catch (error) {
     console.log(error); //eslint-disable-line
   }

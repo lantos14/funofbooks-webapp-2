@@ -14,7 +14,6 @@ export function getData(url) {
 }
 
 export function sendLogin(url, data) {
-  console.log('api login data: ', data); //eslint-disable-line
   return fetch(url, {
     method: 'POST',
     headers: {

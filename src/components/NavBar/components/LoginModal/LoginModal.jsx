@@ -51,13 +51,6 @@ function LoginModal({ loginRequested }) {
             type="password"
             fullWidth
           />
-          <TextField
-            margin="dense"
-            id="password-double"
-            label="Jelszó még egyszer"
-            type="password"
-            fullWidth
-          />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleLogin} color="primary">
