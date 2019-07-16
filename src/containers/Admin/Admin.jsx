@@ -8,6 +8,7 @@ import { loginRequested, newBookPosting } from '../../actions/actions';
 import Greeter from './components/Greeter/Greeter';
 import Editor from './components/Editor/Editor';
 import appStyle from '../Main/Main.style';
+import adminTypes from './Admin.types';
 
 const Admin = ({
   loginRequested,
@@ -36,6 +37,8 @@ const Admin = ({
     </div>
   );
 };
+
+Admin.propTypes = adminTypes;
 
 const mapStateToProps = store => ({
 });

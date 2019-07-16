@@ -3,6 +3,7 @@ import React from 'react';
 import { jsx } from '@emotion/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import { func } from 'prop-types';
 import NavBarStyle from './NavBar.style';
 import SwipeableTemporaryDrawer from './components/Drawer/Drawer';
 import BookShelfTypes from './components/Drawer/components/BookShelf/BookShelf.types';
@@ -25,7 +26,7 @@ const NavBar = ({
               <LoginModal loginRequested={loginRequested} />
             </Toolbar>
           )
-          : null
+          : <div />
       }
     </AppBar>
   </div>
@@ -33,6 +34,11 @@ const NavBar = ({
 
 NavBar.propTypes = {
   ...BookShelfTypes,
+  loginRequested: func,
+};
+
+NavBar.defaultProps = {
+  loginRequested: () => null,
 };
 
 export default NavBar;

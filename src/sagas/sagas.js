@@ -34,7 +34,6 @@ function* postNewBook(action) {
     yield delay(100);
     const url = `${process.env.FOB_SERVER}/nospoiler`;
     const response = yield call(API.postData, url, action.payload);
-    console.log('response: ', response);
     yield put({
       type: NEW_BOOK_POST_SUCCEEDED,
       payload: 'nothing',

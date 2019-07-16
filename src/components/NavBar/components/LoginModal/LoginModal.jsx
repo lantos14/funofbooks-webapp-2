@@ -7,6 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import NavButton from '../NavButton/NavButton';
+import loginModalTypes from './LoginModal.types';
 
 function LoginModal({ loginRequested }) {
   const [open, setOpen] = React.useState(false);
@@ -64,5 +65,7 @@ function LoginModal({ loginRequested }) {
     </div>
   );
 }
+
+LoginModal.propTypes = loginModalTypes;
 
 export default LoginModal;

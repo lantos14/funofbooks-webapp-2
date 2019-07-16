@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
+import { func } from 'prop-types';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -87,5 +88,9 @@ const Editor = ({
     </div>
   </div>
 );
+
+Editor.propTypes = {
+  handleNewPost: func.isRequired,
+};
 
 export default Editor;
