@@ -6,8 +6,8 @@ import greetStyle from './Greeter.style';
 const Greeter = ({
   username,
 }) => (
-  <div className="greet" css={greetStyle}>
-    <p>
+  <div className="greet" css={greetStyle.greeter}>
+    <p css={greetStyle.p}>
       Üdv,
       {' '}
       {username}
