@@ -49,6 +49,7 @@ function* sendLoginCreds(action) {
     const url = `${process.env.FOB_SERVER}/authentication`;
     const data = yield call(API.sendLogin, url, action.payload);
     const decodedToken = jwtDecode(data.accessToken);
+    console.log('decodedToken: ', decodedToken);
     localStorage.setItem('jwtToken', data.accessToken);
     localStorage.setItem('username', decodedToken.username);
     yield put({

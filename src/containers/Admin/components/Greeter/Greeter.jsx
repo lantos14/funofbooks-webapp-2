@@ -8,12 +8,17 @@ const Greeter = ({
   username,
 }) => (
   <div className="greet" css={greetStyle.greeter}>
-    <p css={greetStyle.p}>
-      Üdv,
-      {' '}
-      {username}
-      {'! :)'}
-    </p>
+    {username
+      ? (
+        <p css={greetStyle.p}>
+          Üdv,
+          {' '}
+          {username}
+          {'! :)'}
+        </p>
+      )
+      : <div />
+    }
   </div>
 );
 

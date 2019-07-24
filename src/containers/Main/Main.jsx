@@ -6,14 +6,16 @@ import { connect } from 'react-redux';
 import appStyle from './Main.style';
 import Header from '../../components/Header/Header';
 import NavBar from '../../components/NavBar/NavBar';
-import { getBooks, loginRequested } from '../../actions/actions';
+import { getBooks } from '../../actions/actions';
 import AppTypes from './Main.types';
 import Content from '../../components/Content/Content';
+import Editor from '../Admin/components/Editor/Editor';
 
 const Main = ({
   getBooks,
-  bookList,
   selectedBook,
+  bookList,
+  loggedIn,
 }) => {
   useEffect(() => {
     getBooks();
@@ -21,11 +23,12 @@ const Main = ({
 
   return (
     <div className="app" css={appStyle}>
-      <NavBar bookList={bookList} userRole="reader" />
+      <NavBar bookList={bookList} />
       <Header />
-      <Content
-        selectedBook={selectedBook}
-      />
+      {loggedIn
+        ? <Editor />
+        : <Content selectedBook={selectedBook} />
+      }
     </div>
   );
 };
@@ -35,7 +38,9 @@ Main.propTypes = AppTypes;
 const mapStateToProps = store => ({
   bookList: store.bookStore.books,
   selectedBook: store.bookStore.selectedBook,
+  loggedIn: store.user.login,
 });
+
 const mapDispatchToProps = {
   getBooks,
 };
