@@ -9,8 +9,8 @@ import NavBarStyle from './NavBar.style';
 import SwipeableTemporaryDrawer from './components/Drawer/Drawer';
 import BookShelfTypes from './components/Drawer/components/BookShelf/BookShelf.types';
 import LoginModal from './components/LoginModal/LoginModal';
-import Greeter from '../../containers/Admin/components/Greeter/Greeter';
 import { loginRequested } from '../../actions/actions';
+import Greeter from '../../containers/Main/components/Greeter/Greeter';
 
 const { toolbar, navbar } = NavBarStyle;
 

@@ -23,18 +23,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lantos14/lute-react-boilerplate.git"
+    "url": "git+https://github.com/lantos14/funofbooks-webapp-2.git"
   },
   "keywords": [
     "react",
-    "boilerplate"
+    "blog",
+    "books",
+    "review",
+    "fantasy"
   ],
   "author": "lantos14",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lantos14/lute-react-boilerplate/issues"
+    "url": "https://github.com/lantos14/funofbooks-webapp-2/issues"
   },
-  "homepage": "https://github.com/lantos14/lute-react-boilerplate#readme",
+  "homepage": "https://github.com/lantos14/funofbooks-webapp-2#readme",
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",

@@ -3,7 +3,8 @@ import { css } from '@emotion/core';
 const ReviewStyle = {
   content: css`
     background-color: #f5f5f5;
-    padding: 20px;
+    margin: 60px;
+    padding: 60px;
     text-align: justify;
     position: relative;
   `,
@@ -12,6 +13,10 @@ const ReviewStyle = {
   `,
   img: css`
     height: 100px;
+  `,
+  p: css`
+    font-size: 26px;
+    line-height: 45px;
   `,
 };
 

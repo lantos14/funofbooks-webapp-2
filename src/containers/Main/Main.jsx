@@ -9,7 +9,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import { getBooks } from '../../actions/actions';
 import AppTypes from './Main.types';
 import Content from '../../components/Content/Content';
-import Editor from '../Admin/components/Editor/Editor';
+import Editor from './components/Editor/Editor';
 
 const Main = ({
   getBooks,

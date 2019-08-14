@@ -9,13 +9,16 @@ export const titleStyle = css`
   z-index: 1;
   background-color: ${backColor};
   box-sizing: content-box !important;
-  padding: 30px;
+  padding: 40px;
+  font-family: 'Special Elite', cursive;
 `;
 
 export const h1Style = css`
   color: ${frontColor};
+  padding-top: 15px;
   border-top: ${borderAttr};
   border-bottom: ${borderAttr};
   box-sizing: content-box !important;
   font-size: 60px;
+  font-family: 'Special Elite', cursive;
 `;
